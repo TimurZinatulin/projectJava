@@ -631,3 +631,129 @@ Caused by: java.lang.IllegalStateException: The file is locked: nio:C:/TextEdito
 	at org.h2.mvstore.FileStore.open(FileStore.java:173)
 	at org.h2.mvstore.MVStore.<init>(MVStore.java:347)
 	... 47 more
+2024-04-06 21:52:07 database: flush
+org.h2.message.DbException: Внутренняя ошибка: "java.lang.IllegalStateException: File corrupt reading chunk at position 20480 [1.4.196/6]"
+General error: "java.lang.IllegalStateException: File corrupt reading chunk at position 20480 [1.4.196/6]" [50000-196]
+	at org.h2.message.DbException.get(DbException.java:168)
+	at org.h2.message.DbException.convert(DbException.java:295)
+	at org.h2.mvstore.db.MVTableEngine$1.uncaughtException(MVTableEngine.java:95)
+	at org.h2.mvstore.MVStore.writeInBackground(MVStore.java:2516)
+	at org.h2.mvstore.MVStore$BackgroundWriterThread.run(MVStore.java:2720)
+Caused by: org.h2.jdbc.JdbcSQLException: Внутренняя ошибка: "java.lang.IllegalStateException: File corrupt reading chunk at position 20480 [1.4.196/6]"
+General error: "java.lang.IllegalStateException: File corrupt reading chunk at position 20480 [1.4.196/6]" [50000-196]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	... 5 more
+Caused by: java.lang.IllegalStateException: File corrupt reading chunk at position 20480 [1.4.196/6]
+	at org.h2.mvstore.DataUtils.newIllegalStateException(DataUtils.java:765)
+	at org.h2.mvstore.Chunk.readChunkHeader(Chunk.java:140)
+	at org.h2.mvstore.MVStore.readChunkHeader(MVStore.java:1583)
+	at org.h2.mvstore.MVStore.getMetaMap(MVStore.java:526)
+	at org.h2.mvstore.MVStore.openMapVersion(MVStore.java:409)
+	at org.h2.mvstore.MVMap.openVersion(MVMap.java:1133)
+	at org.h2.mvstore.MVMap.rewrite(MVMap.java:780)
+	at org.h2.mvstore.MVStore.compactRewrite(MVStore.java:1918)
+	at org.h2.mvstore.MVStore.compact(MVStore.java:1810)
+	at org.h2.mvstore.MVStore.writeInBackground(MVStore.java:2512)
+	... 1 more
+2024-04-06 21:53:06 database: could not close the database
+org.h2.message.DbException: Внутренняя ошибка: "Внутренняя ошибка: ""java.lang.IllegalStateException: File corrupt reading chunk at position 20480 [1.4.196/6]""
+General error: ""java.lang.IllegalStateException: File corrupt reading chunk at position 20480 [1.4.196/6]"" [50000-196]"
+General error: "Внутренняя ошибка: ""java.lang.IllegalStateException: File corrupt reading chunk at position 20480 [1.4.196/6]""
+General error: ""java.lang.IllegalStateException: File corrupt reading chunk at position 20480 [1.4.196/6]"" [50000-196]" [50000-196]
+	at org.h2.message.DbException.get(DbException.java:168)
+	at org.h2.engine.Database.throwLastBackgroundException(Database.java:2038)
+	at org.h2.engine.Database.close(Database.java:1224)
+	at org.h2.engine.DatabaseCloser.run(DatabaseCloser.java:63)
+Caused by: org.h2.jdbc.JdbcSQLException: Внутренняя ошибка: "Внутренняя ошибка: ""java.lang.IllegalStateException: File corrupt reading chunk at position 20480 [1.4.196/6]""
+General error: ""java.lang.IllegalStateException: File corrupt reading chunk at position 20480 [1.4.196/6]"" [50000-196]"
+General error: "Внутренняя ошибка: ""java.lang.IllegalStateException: File corrupt reading chunk at position 20480 [1.4.196/6]""
+General error: ""java.lang.IllegalStateException: File corrupt reading chunk at position 20480 [1.4.196/6]"" [50000-196]" [50000-196]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	... 4 more
+Caused by: org.h2.message.DbException: Внутренняя ошибка: "java.lang.IllegalStateException: File corrupt reading chunk at position 20480 [1.4.196/6]"
+General error: "java.lang.IllegalStateException: File corrupt reading chunk at position 20480 [1.4.196/6]" [50000-196]
+	at org.h2.message.DbException.get(DbException.java:168)
+	at org.h2.message.DbException.convert(DbException.java:295)
+	at org.h2.mvstore.db.MVTableEngine$1.uncaughtException(MVTableEngine.java:95)
+	at org.h2.mvstore.MVStore.writeInBackground(MVStore.java:2516)
+	at org.h2.mvstore.MVStore$BackgroundWriterThread.run(MVStore.java:2720)
+Caused by: org.h2.jdbc.JdbcSQLException: Внутренняя ошибка: "java.lang.IllegalStateException: File corrupt reading chunk at position 20480 [1.4.196/6]"
+General error: "java.lang.IllegalStateException: File corrupt reading chunk at position 20480 [1.4.196/6]" [50000-196]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	... 5 more
+Caused by: java.lang.IllegalStateException: File corrupt reading chunk at position 20480 [1.4.196/6]
+	at org.h2.mvstore.DataUtils.newIllegalStateException(DataUtils.java:765)
+	at org.h2.mvstore.Chunk.readChunkHeader(Chunk.java:140)
+	at org.h2.mvstore.MVStore.readChunkHeader(MVStore.java:1583)
+	at org.h2.mvstore.MVStore.getMetaMap(MVStore.java:526)
+	at org.h2.mvstore.MVStore.openMapVersion(MVStore.java:409)
+	at org.h2.mvstore.MVMap.openVersion(MVMap.java:1133)
+	at org.h2.mvstore.MVMap.rewrite(MVMap.java:780)
+	at org.h2.mvstore.MVStore.compactRewrite(MVStore.java:1918)
+	at org.h2.mvstore.MVStore.compact(MVStore.java:1810)
+	at org.h2.mvstore.MVStore.writeInBackground(MVStore.java:2512)
+	... 1 more
+2024-04-06 22:42:57 database: flush
+org.h2.message.DbException: Внутренняя ошибка: "java.lang.IllegalStateException: The file is locked: nio:C:/projectJava/h2db.mv.db [1.4.196/7]"
+General error: "java.lang.IllegalStateException: The file is locked: nio:C:/projectJava/h2db.mv.db [1.4.196/7]" [50000-196]
+	at org.h2.message.DbException.get(DbException.java:168)
+	at org.h2.message.DbException.convert(DbException.java:295)
+	at org.h2.mvstore.db.MVTableEngine$1.uncaughtException(MVTableEngine.java:95)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:378)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:361)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2930)
+	at org.h2.mvstore.db.MVTableEngine$Store.open(MVTableEngine.java:155)
+	at org.h2.mvstore.db.MVTableEngine.init(MVTableEngine.java:100)
+	at org.h2.engine.Database.getPageStore(Database.java:2476)
+	at org.h2.engine.Database.open(Database.java:697)
+	at org.h2.engine.Database.openDatabase(Database.java:276)
+	at org.h2.engine.Database.<init>(Database.java:270)
+	at org.h2.engine.Engine.openSession(Engine.java:64)
+	at org.h2.engine.Engine.openSession(Engine.java:176)
+	at org.h2.engine.Engine.createSessionAndValidate(Engine.java:154)
+	at org.h2.engine.Engine.createSession(Engine.java:137)
+	at org.h2.engine.Engine.createSession(Engine.java:27)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:354)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:116)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:100)
+	at org.h2.Driver.connect(Driver.java:69)
+	at org.hibernate.engine.jdbc.connections.internal.DriverConnectionCreator.makeConnection(DriverConnectionCreator.java:38)
+	at org.hibernate.engine.jdbc.connections.internal.BasicConnectionCreator.createConnection(BasicConnectionCreator.java:58)
+	at org.hibernate.engine.jdbc.connections.internal.PooledConnections.addConnections(PooledConnections.java:123)
+	at org.hibernate.engine.jdbc.connections.internal.PooledConnections.<init>(PooledConnections.java:42)
+	at org.hibernate.engine.jdbc.connections.internal.PooledConnections.<init>(PooledConnections.java:20)
+	at org.hibernate.engine.jdbc.connections.internal.PooledConnections$Builder.build(PooledConnections.java:161)
+	at org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl.buildPool(DriverManagerConnectionProviderImpl.java:109)
+	at org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl.configure(DriverManagerConnectionProviderImpl.java:72)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.configureService(StandardServiceRegistryImpl.java:94)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:242)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:210)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.buildJdbcConnectionAccess(JdbcEnvironmentInitiator.java:145)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:66)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:35)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:88)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:259)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:233)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:210)
+	at org.hibernate.engine.jdbc.internal.JdbcServicesImpl.configure(JdbcServicesImpl.java:51)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.configureService(StandardServiceRegistryImpl.java:94)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:242)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:210)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.handleTypes(MetadataBuildingProcess.java:352)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:111)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.build(MetadataBuildingProcess.java:83)
+	at org.hibernate.boot.internal.MetadataBuilderImpl.build(MetadataBuilderImpl.java:418)
+	at org.hibernate.boot.internal.MetadataBuilderImpl.build(MetadataBuilderImpl.java:87)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:691)
+	at dbService.DBServiceImpl.createSessionFactory(DBServiceImpl.java:60)
+	at dbService.DBServiceImpl.<init>(DBServiceImpl.java:25)
+	at main.Main.main(Main.java:19)
+Caused by: org.h2.jdbc.JdbcSQLException: Внутренняя ошибка: "java.lang.IllegalStateException: The file is locked: nio:C:/projectJava/h2db.mv.db [1.4.196/7]"
+General error: "java.lang.IllegalStateException: The file is locked: nio:C:/projectJava/h2db.mv.db [1.4.196/7]" [50000-196]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	... 52 more
+Caused by: java.lang.IllegalStateException: The file is locked: nio:C:/projectJava/h2db.mv.db [1.4.196/7]
+	at org.h2.mvstore.DataUtils.newIllegalStateException(DataUtils.java:765)
+	at org.h2.mvstore.FileStore.open(FileStore.java:173)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:347)
+	... 47 more
