@@ -2,4 +2,5 @@
 target/
 out/
 test_server/
+*.jar
 HW01/
