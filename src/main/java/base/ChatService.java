@@ -1,10 +1,10 @@
 package base;
 
-import chat.ChatWebSocket;
+import chat.ChatSocket;
 
 public interface ChatService {
 
     void sendMessage(String data);
-    void add(ChatWebSocket webSocket);
-    void remove(ChatWebSocket webSocket);
+    void add(ChatSocket webSocket);
+    void remove(ChatSocket webSocket);
 }
